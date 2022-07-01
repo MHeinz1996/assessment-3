@@ -13,7 +13,7 @@ margin: 0;
 }
 
 .bg-steel {
-background-color: #5f788a;
+background-color: #686868;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -92,4 +92,15 @@ font-size: 2.5rem;
     border-radius: 25px;
     border: 0;
     text-indent: 20px;
+}
+
+#dropdownMenuButton1 {
+    background-color: transparent;
+    border: 0;
+}
+
+#search-button {
+    border-radius: 25px;
+    background-color: #575C55;
+    border: #575C55;
 }

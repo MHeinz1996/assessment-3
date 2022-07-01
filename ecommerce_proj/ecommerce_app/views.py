@@ -1,8 +1,9 @@
 from django.shortcuts import render
-import requests, pprint, os, json
+import pprint, os, json
 from requests_oauthlib import OAuth1
 from dotenv import load_dotenv
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 import requests as HTTP_Client
 
 # load my apikey and secret key
@@ -12,12 +13,6 @@ load_dotenv()
 pp = pprint.PrettyPrinter(indent=2, depth=2)
 
 def index(request):
-
-    # setting up my authentication with my hidden keys
-    auth = OAuth1(os.environ['apikey'], os.environ['secretkey'])
-
-    
-
     return render(request, 'ecommerce_app/index.html')
 
 def home(request):
@@ -82,3 +77,18 @@ def bed_bath(request):
     ]
 
     return render(request, 'ecommerce_app/bed_bath.html', {'content':content, 'title': 'Bed & Bath'})
+
+@csrf_exempt
+def search(request):
+    # setting up my authentication with my hidden keys
+    auth = OAuth1(os.environ['apikey'], os.environ['secretkey'])
+
+    if request.method == 'POST':
+        body = json.loads(request.body)
+        searched = body['searched']
+    
+    endpoint = f"http://api.thenounproject.com/icon/{searched}"
+
+    API_response = HTTP_Client.get(endpoint, auth=auth)
+    responseJSON = API_response.json()
+    return JsonResponse({'img_url': responseJSON['icon']['preview_url']})
