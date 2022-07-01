@@ -6,4 +6,25 @@
             <h1>Bed & Bath</h1>
         </div>
     </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-sm-6 text-center">
+            <h3>Featured</h3>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-around">
+        <div class="row">
+            {% for card in content %}
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{card.img}}" class="card-img-top" alt="Featured Item">
+                    <div class="card-body">
+                      <h5 class="card-title">{{card.item}}</h5>
+                      <p class="card-text">{{card.price}}</p>
+                      <a href="#" class="btn btn-outline-primary">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock content %}

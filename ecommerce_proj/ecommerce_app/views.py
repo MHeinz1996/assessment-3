@@ -16,32 +16,69 @@ def index(request):
     # setting up my authentication with my hidden keys
     auth = OAuth1(os.environ['apikey'], os.environ['secretkey'])
 
+    
+
     return render(request, 'ecommerce_app/index.html')
 
 def home(request):
-    content = {
-        'title': 'Home'
-    }
+    content = [
+        {
+            'img': 'https://images.unsplash.com/photo-1538577880403-f9998e75dd06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+            'item': 'Couch Cushions',
+            'price': '$19.99',
+        },
+        {
+            'img': 'https://images.unsplash.com/photo-1583845112239-97ef1341b271?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+            'item': 'Table Set',
+            'price': '$299.99',
+        },
+        {
+            'img': 'https://images.unsplash.com/photo-1567002260451-50e05a6b031a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+            'item': 'Bathtub',
+            'price': '$999.99',
+        }
+    ]
 
-    return render(request, 'ecommerce_app/home.html', content)
+    return render(request, 'ecommerce_app/home.html', {'content':content, 'title': 'Home'})
 
 def kitchen(request):
-    content = {
-        'title': 'Kitchen'
-    }
+    content = [
+       {
+            'img': 'https://images.unsplash.com/photo-1538577880403-f9998e75dd06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+            'item': 'Couch Cushions',
+            'price': '$19.99',
+        },
+        {
+            'img': 'https://images.unsplash.com/photo-1583845112239-97ef1341b271?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+            'item': 'Table Set',
+            'price': '$299.99',
+        },
+        {
+            'img': 'https://images.unsplash.com/photo-1567002260451-50e05a6b031a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+            'item': 'Bathtub',
+            'price': '$999.99',
+        }
+    ]
 
-    return render(request, 'ecommerce_app/kitchen.html', content)
+    return render(request, 'ecommerce_app/kitchen.html', {'content':content, 'title': 'Kitchen'})
 
 def bed_bath(request):
-    content = {
-        'title': 'Bed & Bath'
-    }
+    content = [
+        {
+            'img': 'https://images.unsplash.com/photo-1538577880403-f9998e75dd06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+            'item': 'Couch Cushions',
+            'price': '$19.99',
+        },
+        {
+            'img': 'https://images.unsplash.com/photo-1583845112239-97ef1341b271?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+            'item': 'Table Set',
+            'price': '$299.99',
+        },
+        {
+            'img': 'https://images.unsplash.com/photo-1567002260451-50e05a6b031a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+            'item': 'Bathtub',
+            'price': '$999.99',
+        }
+    ]
 
-    return render(request, 'ecommerce_app/bed_bath.html', content)
-
-def office(request):
-    content = {
-        'title': 'Office'
-    }
-
-    return render(request, 'ecommerce_app/office.html', content)
+    return render(request, 'ecommerce_app/bed_bath.html', {'content':content, 'title': 'Bed & Bath'})
