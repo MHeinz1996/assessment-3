@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- Bootstrap CSS/JS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="static/css/styles.css">
+        <script src="static/js/main.js" defer></script>
+        
+        {% if title %}
+        <title>Michael's - {{ title }}</title>
+        {% else %}
+        <title>Michael's</title>
+        {% endif %}
+    </head>
+    
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+          <div class="container">
+            <a class="navbar-brand me-4" href="{% url 'index' %}">Michael's</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+              <div class="navbar-nav me-auto">
+                <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
+                <a class="nav-item nav-link" href="{% url 'kitchen' %}">Kitchen</a>
+                <a class="nav-item nav-link" href="{% url 'bed_bath' %}">Bed & Bath</a>
+                <a class="nav-item nav-link" href="{% url 'office' %}">Office</a>
+              </div>
+              <div class="navbar-nav ms-auto">
+                <a class="nav-item nav-link" href="#">Cart</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <marquee scrollamount="12" style="color: red; font-weight: bold">SUMMER SALE! Select Items for up to 75% off!**</marquee>
+      <main role="main" class="container" style="margin-top: 5px">
+            {% block content %}{% endblock %}
+      </main>
+</body>
+</html>
