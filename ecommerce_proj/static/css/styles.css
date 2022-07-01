@@ -101,6 +101,6 @@ font-size: 2.5rem;
 
 #search-button {
     border-radius: 25px;
-    background-color: #575C55;
-    border: #575C55;
+    /* background-color: #575C55;
+    border: #575C55; */
 }

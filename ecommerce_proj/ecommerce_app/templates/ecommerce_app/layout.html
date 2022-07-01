@@ -39,13 +39,13 @@
               <div class="navbar-nav ms-auto me-auto">
                 <form id="search-form">
                   <input id="search" placeholder="🔍   Search" class="search-field" onkeydown="return event.key != 'Enter';" onkeyup="if(this.value.length > 0) document.getElementById('search-button').disabled = false; else document.getElementById('start_button').disabled = true;">
-                  <button class="btn btn-primary btn-sm" type="submit" id="search-button" data-bs-toggle="modal" data-bs-target="#search-modal" disabled>Search</button>
+                  <a href="{% url 'search' %}"><button class="btn btn-secondary btn-sm" type="submit" id="search-button" disabled>Search</button></a>
                 </form>  
               </div>              
               <div class="navbar-nav ms-auto">       
                 <div class="dropdown">
                   <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Cart<span id="cart-items"></span>
+                    Cart<span id="cart-badge" class="badge text-bg-secondary"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -62,21 +62,5 @@
       <main role="main" class="container" style="margin-top: 5px">
             {% block content %}{% endblock %}
       </main>
-      <div class="modal fade" id="search-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content justify-content-center">
-            <div class="modal-header">
-              <h5 class="modal-title">SOLD OUT! 😱</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <img id="searched-img" src="">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
 </body>
 </html>
