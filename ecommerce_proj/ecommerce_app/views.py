@@ -130,13 +130,14 @@ def search(request):
     # setting up my authentication with my hidden keys
     auth = OAuth1(os.environ['apikey'], os.environ['secretkey'])
 
-
+    # Get from search form
     searched = request.GET.get('searched')
     match = False
     
     # Loops through store inventory to see if searched item is in stock
     # If so, will set the content with that item's info
     # If not, will set content with Noun Project info
+    # Content will be sent to front end to be displayed in a modal
     for i, item in enumerate(inventory):
         if(searched == item['item']):
             content = [inventory[i]]
@@ -161,9 +162,8 @@ def search(request):
 
 
 
-# For the cart, need to figure out how to ensure data persists using a django dictionary
-# Then using that dictionary, send info to the front-end to display it on the checkout screen
-# Don't think I'm allow to just use JQuery to populate an html page
+# Function will tally up the total price of the cart and display all of
+# the cart_list contents and the total price to the cart.html page
 def cart(request):
     total_price = 0
     content = cart_list
@@ -173,6 +173,11 @@ def cart(request):
             print(total_price)
     return render(request, 'ecommerce_app/cart.html', {'content':content, 'title': 'Cart', 'total_price': total_price})
 
+
+# When a user hit the 'Add to Cart' button, the front end sends a
+# string that is in the form of a python dictionary to the backend
+# The backend then parses the string and formats it into a workable
+# form and adds the content of that item to the cart list
 cart_list = []
 def add_to_cart(request):
     content = []
