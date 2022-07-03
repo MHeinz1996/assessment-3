@@ -13,47 +13,47 @@ inventory = [
     {
         'img': 'https://images.unsplash.com/photo-1538577880403-f9998e75dd06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
         'item': 'Cushions',
-        'price': '$19.99',
+        'price': '20',
     },
     {
         'img': 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         'item': 'Sofa',
-        'price': '$699.99',
+        'price': '700',
     },
     {
         'img': 'https://images.unsplash.com/photo-1577979749830-f1d742b96791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         'item': 'Television',
-        'price': '$399.99',
+        'price': '400',
     },
     {
         'img': 'https://images.unsplash.com/photo-1617713780979-4ae0c726f253?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         'item': 'Oven',
-        'price': '$399.99',
+        'price': '400',
     },
     {
         'img': 'https://images.unsplash.com/photo-1583845112239-97ef1341b271?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
         'item': 'Table Set',
-        'price': '$299.99',
+        'price': '300',
     },
     {
         'img': 'https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         'item': 'Fridge',
-        'price': '$999.99',
+        'price': '1000',
     },
     {
         'img': 'https://images.unsplash.com/photo-1620641622503-43554860be67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         'item': 'Sink',
-        'price': '$199.99',
+        'price': '200',
     },
     {
         'img': 'https://images.unsplash.com/photo-1578898887932-dce23a595ad4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         'item': 'Bed',
-        'price': '$299.99',
+        'price': '300',
     },
     {
         'img': 'https://images.unsplash.com/photo-1567002260451-50e05a6b031a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
         'item': 'Bathtub',
-        'price': '$999.99',
+        'price': '1000',
     }
 ]
 

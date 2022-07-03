@@ -11,7 +11,7 @@ document.getElementById('search-form').addEventListener('submit', (event)=>{
         document.getElementById('search-modal-item').innerHTML = `${response.data.item}`
         document.getElementById('search-modal-img').src = `${response.data.img}`
         document.getElementById('search-modal-price').innerHTML = `$${response.data.price}`
-        document.getElementById('search-add-to-cart').value = `item:${response.data.item},price:${response.data.price}}`
+        document.getElementById('search-add-to-cart').value = `item:${response.data.item},price:${response.data.price}`
 
         // Determine if 'Add to Cart' button should be visible or not
         if(response.data.price === 'SOLD OUT!') {
