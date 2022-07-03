@@ -66,7 +66,10 @@
             </div>
             <div class="modal-footer">
               <h6 class="modal-title" id="search-modal-price"></h6>
-              <a id="search-cart-button" href="#" class="btn btn-outline-secondary" hidden>Add to cart</a>
+              <form action="{% url 'add_to_cart' %}" method="post" id="add-to-cart-form">
+                {% csrf_token %}
+                <button type="submit" form="add-to-cart-form" name="add-to-cart-button" id="search-add-to-cart" value="" class="btn btn-outline-secondary" hidden>Add to cart</button>
+            </form>
             </div>
           </div>
         </div>
