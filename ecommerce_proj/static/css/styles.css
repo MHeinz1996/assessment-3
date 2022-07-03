@@ -104,3 +104,8 @@ font-size: 2.5rem;
     /* background-color: #575C55;
     border: #575C55; */
 }
+
+#search-modal-img {
+    height: 100%;
+    width: 100%;
+}
