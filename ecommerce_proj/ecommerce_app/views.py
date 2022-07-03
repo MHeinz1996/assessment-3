@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from requests_oauthlib import OAuth1
 from dotenv import load_dotenv
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import pprint, os, json
 import requests as HTTP_Client
@@ -159,9 +159,6 @@ def search(request):
     pp.pprint(content)
     return JsonResponse(content[0])
     
-
-
-
 # Function will tally up the total price of the cart and display all of
 # the cart_list contents and the total price to the cart.html page
 def cart(request):
@@ -170,14 +167,12 @@ def cart(request):
     for item in content:
         if item['price']:
             total_price = total_price + int(item['price'])
-            print(total_price)
     return render(request, 'ecommerce_app/cart.html', {'content':content, 'title': 'Cart', 'total_price': total_price})
 
-
-# When a user hit the 'Add to Cart' button, the front end sends a
+# When a user hits the 'Add to Cart' button, the front end sends a
 # string that is in the form of a python dictionary to the backend
 # The backend then parses the string and formats it into a workable
-# form and adds the content of that item to the cart list
+# form and adds the content of that item to the cart_list
 cart_list = []
 def add_to_cart(request):
     content = []
@@ -189,4 +184,9 @@ def add_to_cart(request):
     print(content[0][0])
     cart_list.append({content[0][0]: content[0][1], content[1][0]: content[1][1]})
     print(cart_list)
-    return HttpResponse(status=204)
+    return HttpResponse(status=204) # Sends a 204 response since I don't need it to really do anything else
+
+# When a page loads, the front end sends a request asking for the length
+# of the cart_list. This function responds with that length
+def cart_counter(request):
+    return JsonResponse({'badge':len(cart_list)})

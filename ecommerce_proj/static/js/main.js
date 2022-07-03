@@ -1,3 +1,4 @@
+// Handle Search Form
 document.getElementById('search-form').addEventListener('submit', (event) => {
     event.preventDefault()
 
@@ -27,9 +28,24 @@ document.getElementById('search-form').addEventListener('submit', (event) => {
     })
 })
 
-var x = 0
-
+// Increment Cart Quantity
+var badge = 0
 function incrementCart() {
-    x++
-    document.getElementById('cart-badge').innerHTML = x
+    badge++
+    document.getElementById('cart-badge').textContent = badge
+    
+};
+
+// when window loads, send get request to backend to get the length of
+// cart_list. If len(cart_list) > 0: set 'cart_badge' to that length
+window.onload = function setCart() {
+    
+    axios.get('/cart_counter').then((response)=> {
+        badge = response.data.badge
+        console.log(`recieved from backend: badge = ${badge}`)
+        if(badge > 0) {
+            console.log(`setting badge to ${badge}`)
+            document.getElementById('cart-badge').textContent = badge
+        }
+    })
 }
